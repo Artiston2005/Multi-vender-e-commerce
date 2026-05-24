@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  email         String    @unique
+  passwordHash  String
+  role          String    @default("CUSTOMER")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  store         Store?
+  orders        Order[]
+  reviews       Review[]
+}
+
+model Store {
+  id          String      @id @default(uuid())
+  ownerId     String      @unique
+  owner       User        @relation(fields: [ownerId], references: [id])
+  name        String      @unique
+  description String?
+  logoUrl     String?
+  status      String      @default("PENDING")
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  products    Product[]
+  orderItems  OrderItem[]
+}
+
+model Product {
+  id          String      @id @default(uuid())
+  storeId     String
+  store       Store       @relation(fields: [storeId], references: [id])
+  name        String
+  description String
+  price       Float
+  stock       Int         @default(0)
+  category    String
+  imageUrl    String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  variants    ProductVariant[]
+  orderItems  OrderItem[]
+  reviews     Review[]
+}
+
+model ProductVariant {
+  id        String   @id @default(uuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name      String   // e.g. "Size: UK 10", "Color: Red"
+  stock     Int      @default(0)
+}
+
+model Order {
+  id            String      @id @default(uuid())
+  customerId    String
+  customer      User        @relation(fields: [customerId], references: [id])
+  totalAmount   Float
+  status        String      @default("PENDING")
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  orderItems    OrderItem[]
+}
+
+model OrderItem {
+  id          String   @id @default(uuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id])
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  vendorId    String
+  vendor      Store    @relation(fields: [vendorId], references: [id])
+  variantName String?  // Optional name of the variant purchased (e.g. "UK 8")
+  quantity    Int
+  price       Float
+  status      String   @default("PENDING") // PENDING, SHIPPED, DELIVERED
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  rating    Int      // 1 to 5
+  comment   String?
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@unique([userId, productId]) // One review per user per product
+}
