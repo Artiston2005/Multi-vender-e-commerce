@@ -1,8 +1,8 @@
 # Multi-Vendor E-Commerce Platform
 
-**Intern ID**: [Your Intern ID]  
-**Full Name**: [Your Full Name]  
-**No. of Weeks**: [Number of Weeks]  
+**Intern ID**: CITS1467  
+**Full Name**: Ashwin Yadav 
+**No. of Weeks**: 8 weeks  
 **Project Name**: Multi-Vendor E-Commerce Platform  
 **Project Scope**: A comprehensive web application allowing multiple vendors to register, manage their products, and track orders, while providing customers with a seamless shopping experience including search, filters, a shopping cart, checkout, and verified product reviews. 
 
@@ -34,22 +34,29 @@ A fully functional, modern multi-vendor e-commerce platform built with Next.js (
 
 ## Screenshots
 
-*(Placeholders for screenshots)*
-
 ### Home Page (Search & Filters)
-`![Home Page Screenshot](./docs/screenshots/home.png)`
+<img width="2560" height="2583" alt="Homepage Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/82c58f57-5bf3-4092-8944-661c199303ee" />
 
 ### Product Details & Reviews
-`![Product Details Screenshot](./docs/screenshots/product-details.png)`
+<img width="2560" height="1540" alt="Item Page Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/2645b446-6339-4814-855d-832bebe6a8b8" />
 
 ### Vendor Dashboard
-`![Vendor Dashboard Screenshot](./docs/screenshots/vendor-dashboard.png)`
+<img width="2560" height="1240" alt="Vendor Dashboard Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/53696f9e-b0c0-4c0e-8ddc-4e7111635643" />
+<img width="2560" height="1240" alt="Vendor Products Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/c12f8ccb-e42f-4e69-96c3-6f53a4ec2fb8" />
 
 ### Admin Dashboard
-`![Admin Dashboard Screenshot](./docs/screenshots/admin-dashboard.png)`
+<img width="2560" height="1240" alt="Admin Dashboard Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/58f912cd-a591-4a9b-aaf4-c2710e7014b7" />
 
 ### Cart & Checkout
-`![Cart Checkout Screenshot](./docs/screenshots/cart.png)`
+<img width="2560" height="1240" alt="Order Page Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/73a93c72-9f3d-4cee-9f3f-b9d22f22ca28" />
+
+<img width="676" height="1240" alt="Cart Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/1aeedfd3-f3e2-4011-bb8e-806cf7d56b06" />
+
+### Login and Register
+<img width="2560" height="1240" alt="Login Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/ca23c0e2-fdc7-4ad7-b0c1-b5dc05c85ef7" />
+<img width="2560" height="1240" alt="Register Artiston2005 Multi-Vendor E-Commerce" src="https://github.com/user-attachments/assets/afe4db32-4558-4729-abec-241fa226d664" />
+
+
 
 ## Tech Stack
 
