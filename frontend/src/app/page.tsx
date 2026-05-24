@@ -103,7 +103,9 @@ export default function Home() {
       clearCart();
       setIsCartOpen(false);
     } catch (err: any) {
-      alert(err.response?.data?.error || 'Checkout failed');
+      const errorData = err.response?.data?.error;
+      const errorMessage = Array.isArray(errorData) ? errorData[0].message : (errorData || 'Checkout failed');
+      alert(errorMessage);
     } finally {
       setCheckingOut(false);
     }

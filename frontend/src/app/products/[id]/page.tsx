@@ -60,7 +60,8 @@ export default function ProductDetailsPage() {
       setProduct(res.data.product);
       setError('');
     } catch (err: any) {
-      setError(err.response?.data?.error || 'Failed to fetch product details');
+      const errorData = err.response?.data?.error;
+      setError(Array.isArray(errorData) ? errorData[0].message : (errorData || 'Failed to fetch product details'));
     } finally {
       setLoading(false);
     }
@@ -108,7 +109,8 @@ export default function ProductDetailsPage() {
       // Refresh product to show new review
       fetchProduct();
     } catch (err: any) {
-      setReviewError(err.response?.data?.error || 'Failed to submit review');
+      const errorData = err.response?.data?.error;
+      setReviewError(Array.isArray(errorData) ? errorData[0].message : (errorData || 'Failed to submit review'));
     } finally {
       setReviewSubmitting(false);
     }
